@@ -2,8 +2,10 @@
 import Layout from "@/components/Layout.vue";
 import { reactive } from "@vue/reactivity";
 import linear from "@/assets/img/linear.png";
-import loginImage from "@/assets/img/login.png";
-const loginData = reactive({
+import registerImage from "@/assets/img/register.png";
+const registerData = reactive({
+  firstName: "",
+  lastName: "",
   email: "",
   password: "",
 });
@@ -11,13 +13,36 @@ const loginData = reactive({
 
 <template>
   <Layout>
-    <template #title> Masuk ke akun kamu</template>
+    <template #title> Bikin akun baru </template>
     <template #subtitle>
-      Belajar gratis di Namanyajugabelajar.io, dan memulai karir yang kamu
-      cita-citata sejak dalam embrio!
+      Nggak susah kok, kamu cuma tinggal masukin beberapa data aja terus
+      langsung jadi deh!
     </template>
     <template #form>
       <form class="flex flex-col gap-6 lg:gap-8" @submit.prevent="">
+        <div class="grid grid-cols-2 gap-3">
+          <label
+            for="firstName"
+            class="font-semibold tracking-wide text-sm col-span-2"
+            >Nama Lengkap</label
+          >
+          <input
+            type="firstName"
+            name="firstName"
+            id="firstName"
+            placeholder="First name"
+            class="form-control col-span-1"
+            v-model="registerData.firstName"
+          />
+          <input
+            type="lastName"
+            name="lastName"
+            id="lastName"
+            placeholder="Last name"
+            class="form-control col-span-1"
+            v-model="registerData.lastName"
+          />
+        </div>
         <div class="flex flex-col gap-3">
           <label for="email" class="font-semibold tracking-wide text-sm"
             >Email</label
@@ -28,54 +53,29 @@ const loginData = reactive({
             id="email"
             placeholder="abcd@example.com"
             class="form-control"
-            v-model="loginData.email"
+            v-model="registerData.email"
           />
         </div>
 
         <div class="flex flex-col gap-3">
-          <div class="w-full flex justify-between items-center">
-            <label for="password" class="font-semibold tracking-wide text-sm"
-              >Kata Sandi</label
-            >
+          <label for="password" class="font-semibold tracking-wide text-sm"
+            >Kata Sandi</label
+          >
 
-            <router-link
-              to="/forgot-password"
-              class="font-semibold tracking-wide text-sm text-primary"
-              >Lupa Kata Sandi?</router-link
-            >
-          </div>
           <input
             type="password"
             name="password"
             id="password"
             placeholder="Kata sandi"
             class="form-control"
-            v-model="loginData.password"
+            v-model="registerData.password"
           />
         </div>
 
-        <div class="flex items-center gap-3">
-          <input
-            type="checkbox"
-            name="remember_me"
-            id="remember_me"
-            class="
-              bg-gray-100
-              checked:bg-gray-300
-              checked:ring-2
-              checked:ring-gray-300
-              checked:text-gray-300
-              checked:border-none
-              border-none border-transparent
-              hover:ring-2 hover:ring-offset-2 hover:ring-gray-200
-              focus:ring-2 focus:ring-gray-200
-              rounded-md
-            "
-          />
-          <label for="remember_me" class="font-semibold tracking-wide text-sm"
-            >Ingat saya</label
-          >
-        </div>
+        <span class="text-muted text-sm leading-6">
+          Dengan mendaftar berarti kamu setuju dengan Terms of Service dan
+          Privacy Policy dari Namanyajugabelajar.io
+        </span>
 
         <button
           class="
@@ -93,20 +93,14 @@ const loginData = reactive({
             lg:text-sm lg:p-5
           "
         >
-          Masuk
+          Mendaftar
         </button>
       </form>
-    </template>
-    <template #footer>
-      Belum punya akun?
-      <router-link to="/register" class="text-primary"
-        >Daftar sekarang, gratis!</router-link
-      >
     </template>
 
     <template #right>
       <img :src="linear" class="absolute top-0 w-full h-full z-0" alt="" />
-      <img :src="loginImage" class="w-full" alt="" />
+      <img :src="registerImage" class="w-full" alt="" />
       <div class="w-[70%] mx-auto mt-10">
         <span
           class="
@@ -118,8 +112,8 @@ const loginData = reactive({
           >NAMANYAJUGABELAJAR.IO</span
         >
         <p class="text-2xl tracking-wider text-white mt-2">
-          Belajar secara online semakin mudah – tetep belajar walaupun pake
-          kuota dari Kemendikbud hehe~
+          Ayo mendaftar dan belajar dengan rajin di sini supaya jadi pinter dan
+          nggak jadi beban kayak si Denis!
         </p>
       </div>
     </template>
