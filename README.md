@@ -3,7 +3,7 @@
 
 <img src="src/assets/img/banner.png" width="100%" alt="">
 
-### Desain resource
+### Design resource
 
 [Figma file](https://www.figma.com/community/file/1061307506373261985)
 
