@@ -1,7 +1,24 @@
-# Vue 3 + Vite
+<h3 align="center">SLICING DESIGN FIGMA TO WEB WITH VUE JS</h3>
+<p align="center">This branch is slicing authentication</p>
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+<img src="src/assets/img/banner.png" width="100%" alt="">
 
-## Recommended IDE Setup
+### Languages and Tools
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+- Vue Js
+- Vue router
+- Tailwindcss
+- Google Font
+- Vite
+- Visual Studio Code
+
+### Clone This Repo
+
+```bash
+git clone https://github.com/andikaPs/slicing-with-vue.git
+```
+
+- <code>cd slicing-with-vue</code>
+- <code>yarn</code>
+- <code>yarn dev</code>
+- <code>yarn build</code>
