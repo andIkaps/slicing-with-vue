@@ -19,7 +19,11 @@ const registerData = reactive({
       langsung jadi deh!
     </template>
     <template #form>
-      <form class="flex flex-col gap-6 lg:gap-8" @submit.prevent="">
+      <form
+        class="flex flex-col gap-6 lg:gap-8"
+        @submit.prevent=""
+        autocomplete="off"
+      >
         <div class="grid grid-cols-2 gap-3">
           <label
             for="firstName"
@@ -27,7 +31,7 @@ const registerData = reactive({
             >Nama Lengkap</label
           >
           <input
-            type="firstName"
+            type="text"
             name="firstName"
             id="firstName"
             placeholder="First name"
@@ -35,7 +39,7 @@ const registerData = reactive({
             v-model="registerData.firstName"
           />
           <input
-            type="lastName"
+            type="text"
             name="lastName"
             id="lastName"
             placeholder="Last name"
@@ -92,6 +96,7 @@ const registerData = reactive({
             active:ring-2 active:ring-primary/50 active:ring-offset-2
             lg:text-sm lg:p-5
           "
+          @click="$router.push('/')"
         >
           Mendaftar
         </button>

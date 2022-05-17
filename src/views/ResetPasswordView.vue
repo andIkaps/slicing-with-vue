@@ -15,7 +15,11 @@ const confirm_password = ref("");
       orang.
     </template>
     <template #form>
-      <form class="flex flex-col gap-6 lg:gap-8" @submit.prevent="">
+      <form
+        class="flex flex-col gap-6 lg:gap-8"
+        @submit.prevent=""
+        autocomplete="off"
+      >
         <div class="flex flex-col gap-3">
           <label for="password" class="font-semibold tracking-wide text-sm"
             >Kata Sandi Baru</label
@@ -24,7 +28,6 @@ const confirm_password = ref("");
             type="password"
             name="password"
             id="password"
-            placeholder="abcd@example.com"
             class="form-control"
             v-model="password"
           />
@@ -37,7 +40,6 @@ const confirm_password = ref("");
             type="password"
             name="confirm_password"
             id="confirm_password"
-            placeholder="abcd@example.com"
             class="form-control"
             v-model="confirm_password"
           />
@@ -58,6 +60,7 @@ const confirm_password = ref("");
             active:ring-2 active:ring-primary/50 active:ring-offset-2
             lg:text-sm lg:p-5
           "
+          @click="$router.push('/')"
         >
           Atur ulang
         </button>

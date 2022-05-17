@@ -17,7 +17,11 @@ const loginData = reactive({
       cita-citata sejak dalam embrio!
     </template>
     <template #form>
-      <form class="flex flex-col gap-6 lg:gap-8" @submit.prevent="">
+      <form
+        class="flex flex-col gap-6 lg:gap-8"
+        @submit.prevent=""
+        autocomplete="off"
+      >
         <div class="flex flex-col gap-3">
           <label for="email" class="font-semibold tracking-wide text-sm"
             >Email</label
